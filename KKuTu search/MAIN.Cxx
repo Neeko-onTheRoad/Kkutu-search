@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iostream>
 #include <Windows.h>
+#include <algorithm>
 using namespace std;
 
 int main(void) {
@@ -14,6 +15,7 @@ int main(void) {
 
 	wifstream fileTemp(L"file.config");
 	wstring   fileName;
+
 	fileTemp >> fileName;
 
 	if (!fileTemp) {
@@ -45,6 +47,10 @@ int main(void) {
 	}
 	latters.pop_back();
 	file.close();
+
+	sort(latters.begin(), latters.end(), 
+		[](wstring a, wstring b) { return a.size() > b.size(); }
+	);
 
 	while (true) {
 		wcout << L"\x1b[38;5;3m°³Â¼´Â ²ôÅõ °Ë»ö ¿£Áø v0.1" << endl;
