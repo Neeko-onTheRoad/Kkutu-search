@@ -53,7 +53,7 @@ int main(void) {
 	);
 
 	while (true) {
-		wcout << L"\x1b[38;5;3m개쩌는 끄투 검색 엔진 v0.1" << endl;
+		wcout << L"\x1b[38;5;3m개쩌는 끄투 검색 엔진 v0.11" << endl;
 		wcout << L"\x1b[38;5;255m첫 글자 입력 \x1b[38;5;244m> \x1b[38;5;111m";
 		userInput = wstring();
 		wcin >> userInput;
