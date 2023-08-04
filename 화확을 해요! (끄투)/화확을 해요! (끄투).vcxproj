@@ -24,6 +24,7 @@
     <ProjectGuid>{354c3874-d86c-4b32-9665-5153b6edf8c0}</ProjectGuid>
     <RootNamespace>화확을해요끄투</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>KKuTu search</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
