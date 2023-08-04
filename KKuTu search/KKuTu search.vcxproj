@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{354c3874-d86c-4b32-9665-5153b6edf8c0}</ProjectGuid>
-    <RootNamespace>화확을해요끄투</RootNamespace>
+    <RootNamespace>KKuTu search</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>KKuTu search</ProjectName>
   </PropertyGroup>

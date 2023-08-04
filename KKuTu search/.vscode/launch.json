@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "x:/!!programs/화확을 해요! (끄투)/화확을 해요! (끄투)",
-      "program": "x:/!!programs/화확을 해요! (끄투)/화확을 해요! (끄투)/build/Debug/outDebug",
+      "cwd": "x:/!!programs/KKuTu search/KKuTu search",
+      "program": "x:/!!programs/KKuTu search/KKuTu search/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
