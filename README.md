@@ -11,8 +11,9 @@
 
 ## 단어목록 수정
 1. x64 -> Debug 폴더에 에 들어갑니다
-2. file.config에 KKuTuSet파일 이름을 입력 합니다 (기본 : MAIN.KKuTuSet)
-3. file.config에 적은 이름과 같은 KKuTuSet 파일을 만듭니다 (형식 : 단어 구별은 줄바꿈 파일 마지막에 &EOF 그 아래는 모두 주석)
+2. file.config에 KKuTuSet파일들의 이름을 입력 합니다 (기본 : MAIN.KKuTuSet)
+3. file.config마지막에 &EOF를 적습니다
+4. file.config에 적은 이름과 같은 KKuTuSet 파일을 만듭니다 (형식 : 단어 구별은 줄바꿈 파일 마지막에 &EOF 그 아래는 모두 주석)
 
 <br>
 
@@ -29,5 +30,5 @@ cmd에 다음 명령어를 적은 후 실행 해 주세요
 ## 변경
 
 `v0.1  : 없어`  
-`v0.11 : 글자 길이순 정렬로 변경`
-`v0.12 : KKuTuSet파일 여러개 입력 가능, 기본 단어 데이터세트 수정`
+`v0.11 : 글자 길이순 정렬로 변경`  
+`v0.12 : KKuTuSet파일 여러개 입력 가능, 기본 단어 데이터세트 수정`  
