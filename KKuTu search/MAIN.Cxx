@@ -1,7 +1,6 @@
 #include <vector>
 #include <fstream>
 #include <conio.h>
-#include <sstream>
 #include <iostream>
 #include <Windows.h>
 #include <algorithm>
@@ -12,11 +11,16 @@ int main(void) {
 
 	wcout.imbue(locale("kor"));
 	wcin.imbue (locale("kor"));
+	wstring         strBuffer;
+	wifstream       fileTemp(L"file.config");
+	vector<wstring> fileName;
 
-	wifstream fileTemp(L"file.config");
-	wstring   fileName;
-
-	fileTemp >> fileName;
+	fileTemp.imbue(locale(".UTF-8"));
+	while (strBuffer != L"&EOF") {
+		fileTemp >> strBuffer;
+		fileName.push_back(strBuffer);
+	}
+	if (fileName.size() != 0) fileName.pop_back();
 
 	if (!fileTemp) {
 		wcout << L"file.config파일이 없습니다!" << endl;
@@ -26,27 +30,45 @@ int main(void) {
 		exit(EXIT_FAILURE);
 	}
 
-	wifstream       file(fileName);
-	wstring         strBuffer;
+	wifstream       file;
 	vector<wstring> latters;
 	wstring         userInput;
 	bool            isExist;
+	bool            fileNotExist = false;
 
-	if (!file) {
-		wcout << L"파일 \"" << fileName <<  L"\"(을)를 찾을 수 없습니다!" << endl;
-		wcout << L"\"file.config\" 파일에 있는 파일 명이 정확 한지 확인해 주세요!" << endl << endl;
+	for (auto i : fileName) {
+		try {
+			file.open(i);
 
+			if (!file) throw false;
+			else throw true;
+		}
+		catch (bool j) {
+			if (!j) {
+				wcout << L"파일 \"" << i << L"\"(을)를 찾을 수 없습니다!" << endl;
+				wcout << L"\"file.config\" 파일에 있는 파일 명이 정확 한지 확인해 주세요!" << endl << endl;
+
+				fileNotExist = true;
+			}
+			else {
+				file.imbue(locale(".UTF-8"));
+				strBuffer = wstring();
+				while (strBuffer != L"&EOF") {
+					file >> strBuffer;
+					latters.push_back(strBuffer);
+				}
+				if(latters.size() != 0) latters.pop_back();
+				file.close();
+			}
+		}
+	}
+
+	if (fileNotExist) {
 		system("pause");
 		exit(EXIT_FAILURE);
 	}
-
-	file.imbue(locale(".UTF-8"));
-	while (strBuffer != L"&EOF") {
-		file >> strBuffer;
-		latters.push_back(strBuffer);
-	}
-	latters.pop_back();
-	file.close();
+	sort(latters.begin(), latters.end());
+	latters.erase(unique(latters.begin(), latters.end()), latters.end());
 
 	sort(latters.begin(), latters.end(), 
 		[](wstring a, wstring b) { return a.size() > b.size(); }
